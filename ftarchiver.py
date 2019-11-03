@@ -59,6 +59,6 @@ monthfrom, yearfrom = sys.argv[4].split('/')
 monthto, yearto = sys.argv[5].split('/')
 authgeturl = authgeturl.replace('ABONUMMER', abonummer).replace('PLZ', plz).replace('STADT', stadt)
 session = do_auth()
-for year in range(int(yearfrom), int(yearto)):
+for year in range(int(yearfrom), int(yearto)+1):
     for month in range(int(monthfrom), int(monthto)+1):
         download_issue(session, str(year), str(month).zfill(2))
